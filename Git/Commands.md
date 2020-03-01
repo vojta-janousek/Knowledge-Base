@@ -74,7 +74,7 @@ OR
 **git merge --abort**               Stops merging, removes conflicts, returns both branches
                                     to their pre-merge state
                         
-**(feature): git rebase master **   Feature branch catches up to the changes on the master branch
+**git rebase master**   Feature branch catches up to the changes on the master branch
 
 ## Contributing & Collaboration
 
