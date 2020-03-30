@@ -54,3 +54,8 @@ If the container is running, and a file is created within it, the file will
 be lost once the container is halted.
 
 - docker run -it alpine sh (runs an alpine linux container)
+
+Docker Registry (Hub) has many Docker repositories.
+Repositories have many images, each image can have its own tag.
+
+Dockerfile: a recipe for creating a Docker image.
