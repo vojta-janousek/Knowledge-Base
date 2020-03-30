@@ -46,3 +46,10 @@ RUN runs commands after an image has been created, CMD runs them immediately.
 - docker image inspect web1
 A JSON dump with a lot of information about the built image. Layers can be
 checked here (WORKDIR does not create a layer).
+
+- docker image ls
+Lists all images created on the machine.
+
+- docker image rm web1
+- docker image rm web1:1.0 (1.0 is a tagged version)
+Removes the image.
