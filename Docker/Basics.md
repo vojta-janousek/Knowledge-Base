@@ -69,3 +69,6 @@ Lists currently running containers.
 Cleans up any resources (images, containers, volumes, networks) that are dangling.
 - docker system prune -a
 Additionally removes any stopped containers and all unused images.
+
+Images named <none> are dangling: not being used by any project and safe
+to delete.
