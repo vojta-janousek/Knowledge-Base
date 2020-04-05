@@ -30,3 +30,45 @@ it starts up first.
 Specifies the name of a file where environment variable are stored. Make sure
 to specify COMPOSE_PROJECT_NAME to not get into naming conflicts when using
 multiple applications.
+
+- command
+A custom command. Overwrites the CMD command in the Dockerfile.
+
+## Running docker-compose
+
+- docker-compose build
+Builds the image for all services with the build command.
+
+- docker-compose pull
+Pulls down any images that the compose project requires (pulls redis in the example).
+
+- docker-compose up
+Starts the project.
+- docker-compose up redis
+Starts the specified service. Starts its dependencies first.
+
+- docker-compose stop
+Stops containers
+
+- docker-compose up --build -d
+Builds containers and starts the project. -d makes it run in the background.
+
+- docker-compose ps
+Lists all containers for the project.
+
+- docker-compose restart
+Restarts all containers.
+- docker-compose restart redis
+Restarts specified container.
+
+- docker-compose exec web ls -la
+Executes a command (such as ls -la) on the specified container.
+
+- docker-compose exec web sh
+Opens up a shell prompt.
+
+- docker-compose run redis redis-server --version
+Runs a one-off task that eventually exits.
+
+- docker-compose rm
+Removes stopped containers.
