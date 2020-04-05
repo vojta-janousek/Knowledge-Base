@@ -19,6 +19,16 @@ services:
     volumes:
       - '.:/app'
 
+  worker:
+    build: '.'
+    command: celery ...
+    depends_on:
+      - 'redis'
+    env_file:
+      - '.env'
+    volumes:
+      - '.:/app'
+
 # volumes namespace, {} is default
 volumes:
   redis: {}
