@@ -1,9 +1,49 @@
 ## Running Docker Containers
 
-- docker container ls
-Lists currently running containers.
+- docker volume create web2_redis
+A named volume
 
-- docker system prune
-Cleans up any resources (images, containers, volumes, networks) that are dangling.
-- docker system prune -a
-Additionally removes any stopped containers and all unused images.
+- docker volume ls
+Fetches a list of volumes
+
+- docker volume inspect web2_redis
+Inspects a specific named volume
+
+
+## The Twelve Factor App
+
+1. Codebase
+One codebase in revision control, many deploys
+
+2. Dependencies
+Explicitly declare and isolate dependencies
+
+3. Config
+Store config in the environment
+
+4. Backing services
+Treat backing services as attached resources
+
+5. Build, release, run
+Strictly separate build and run stages
+
+6. Processes
+Execute the app as one or more stateless processes
+
+7. Port binding
+Export services via port binding
+
+8. Concurrency
+Scale out via the process model
+
+9. Disposability
+Maximise robustness with fast startup and graceful shutdown
+
+10. Dev/prod parity
+Keep development, staging, and production as similar as possible
+
+11. Logs
+Treat logs as event streams
+
+12. Admin processes
+Run admin/management tasks as one-off processes

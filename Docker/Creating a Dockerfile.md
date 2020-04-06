@@ -53,3 +53,26 @@ Lists all images created on the machine.
 - docker image rm web1
 - docker image rm web1:1.0 (1.0 is a tagged version)
 Removes the image.
+
+## Optimising Dockerfile
+
+Anything specified in the .dockerignore file will be ignored throughout the
+COPY and ADD commands within any Dockerfile.
+This file can be turned into a whitelist by putting a * onto the first line
+of the file.
+
+A container can be optimised by installing system dependencies first.
+An example of an optimised Dockerfile for alpine is in section 11.
+
+## Running scripts when a container starts
+
+In Dockerfile, add the following commands:
+
+- COPY docker-entrypoint.sh /
+- RUN chmod +x /docker-entrypoint.sh
+- ENTRYPOINT ["/docker-entrypoint.sh"]
+
+The shell commands should be in a docker-entrypoint.sh file in the same
+directory as the Dockerfile.
+These script allow running shell commands and do not add layers, as they are
+executed after the image has been created.
