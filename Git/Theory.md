@@ -33,7 +33,7 @@ Fast Forward merge: merges 2 branches if there is no conflict
              In case of a conflict, the different commit changes will be shown inside of the
              conflicting files
              Choose the correct one, then stage and commit the final project state, branches will be merged
-             
+
 ## Rebase
 
 Used to integrate changes from one branch into another
@@ -55,7 +55,7 @@ the branches can be merged by them
 If the pull request contains conflicts, the project owner can resolve them as usual,
 then merge the branches
 
-## Collaboration
+## Collaborations
 
 Add a user as a collaborator in the repository settings
 The invite will be sent via email to be confirmed
