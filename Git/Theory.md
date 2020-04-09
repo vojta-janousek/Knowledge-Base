@@ -55,7 +55,7 @@ the branches can be merged by them
 If the pull request contains conflicts, the project owner can resolve them as usual,
 then merge the branches
 
-## Collaborations
+## Collaboration
 
 Add a user as a collaborator in the repository settings
 The invite will be sent via email to be confirmed
