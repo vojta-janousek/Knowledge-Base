@@ -41,3 +41,51 @@ async def initialise_database():
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(initialise_database())
+
+
+# @initdb_blueprint.listener('before_server_start')
+# async def initialise_db(app, loop):
+#     pool = await create_pool(
+#         host='db',
+#         port=3306,
+#         user='user',
+#         password='password',
+#         db='db',
+#         loop=loop,
+#         autocommit=True
+#     )
+#     app.engine = await create_engine(
+#         host='db',
+#         port=3306,
+#         user='user',
+#         password='password',
+#         db='db',
+#         loop=loop
+#     )
+#     async with pool.acquire() as conn:
+#         db_cursor = await conn.cursor()
+#         try:
+#             await db_cursor.execute(
+#                 str(CreateTable(initdb_blueprint.active_table))
+#             )
+#             await db_cursor.execute(
+#                 str(CreateTable(initdb_blueprint.inactive_table))
+#             )
+#             await db_cursor.executemany(
+#                 'INSERT INTO active_links (owner, owner_id, endpoint, url) \
+#                  VALUES (%s, %s, %s, %s)',
+#                 active_data
+#             )
+#             await db_cursor.executemany(
+#                 'INSERT INTO inactive_links (owner, owner_id, endpoint, url) \
+#                  VALUES (%s, %s, %s, %s)',
+#                 inactive_data
+#             )
+#
+#         except Exception as error:
+#             print(str(error) + '\n' + 'Tables are probably already cached')
+#
+#         await db_cursor.close()
+#
+#     pool.terminate()
+#     await pool.wait_closed()
