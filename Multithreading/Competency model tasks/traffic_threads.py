@@ -1,3 +1,6 @@
+'''
+Output: Final state: 0, Elapsed time: 25.5297839642s
+'''
 import threading
 import time
 
@@ -19,6 +22,7 @@ def consumer(m):
 
 
 if (__name__ == '__main__'):
+    start = time.time()
     limit = 10000000
     global number
     number = 0
@@ -32,4 +36,6 @@ if (__name__ == '__main__'):
     one.join()
     two.join()
 
-    print(number)
+    end = time.time()
+
+    print('Final state: {}, Elapsed time: {}s'.format(number, end - start))
