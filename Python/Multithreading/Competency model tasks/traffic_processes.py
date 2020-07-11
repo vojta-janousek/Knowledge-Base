@@ -13,11 +13,11 @@ def producer(n):
         with open('number_file.txt', 'r+') as f:
             inc_value = int(f.read()) + 1
             f.seek(0)
+            f.truncate()
             f.write(str(inc_value))
 
         _lock.release()
         print(inc_value)
-        time.sleep(1)
 
 
 def consumer(m):
@@ -27,11 +27,11 @@ def consumer(m):
         with open('number_file.txt', 'r+') as g:
             dec_value = int(g.read()) - 1
             g.seek(0)
+            g.truncate()
             g.write(str(dec_value))
 
         _lock.release()
         print(dec_value)
-        time.sleep(1)
 
 
 if (__name__ == '__main__'):
